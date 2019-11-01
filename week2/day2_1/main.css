@@ -1,0 +1,10 @@
+#box {
+  height: 150px;
+  width: 150px;
+}
+.red {
+  background-color: red;
+}
+.blue{
+  background: blue;
+}

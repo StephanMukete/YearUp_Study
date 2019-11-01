@@ -1,0 +1,49 @@
+body{
+
+}
+
+@keyframes  slideFromLeft {
+  from {
+    position: relative;
+    left: -15%;
+  }
+  to {
+    left: 0%;
+  }
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes flipY {
+  from {
+    transform: rotateY(0deg);
+  }
+  to{
+    transform: rotateY(180deg);
+  }
+}
+.imageGrid img:nth-child(1){
+  animation-name: slideFromLeft;
+  animation-duration: 10s;
+}
+.imageGrid img:nth-child(2){
+  animation-name: appear ;
+  animation-duration: 2s;
+}
+.imageGrid img:nth-child(3):hover{
+  animation-name: flipY ;
+  animation-duration: 10s;
+}
+h1{
+  animation-name: slideFromLeft;
+  animation-duration: 10s;
+}
+p {
+  animation-name: flipY;
+  animation-duration: 1s;
+}
