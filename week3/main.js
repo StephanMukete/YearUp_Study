@@ -5,3 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('successful');
   })
 })
+setTimeout(() => {
+  main.remove()
+}, 5000)
