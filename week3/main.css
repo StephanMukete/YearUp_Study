@@ -1,3 +1,53 @@
-body{
-  
+/* @keyframes fadein {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
 }
+.animation{
+
+
+  animation-name: fadein;
+  animation-duration: 7s;
+  background-color: blue; */
+  body {
+
+    margin: 0;
+
+  }
+
+
+
+  #circle {
+
+    height: 150px;
+
+    width: 150px;
+
+    border-radius: 50%;
+
+    background-color: red;
+
+    position: relative;
+
+  }
+
+
+
+  .move {
+
+    animation: moveR 5s;
+
+  }
+
+
+
+  @keyframes moveR {
+
+    from { left: 0; }
+
+    to { left: 100%; }
+
+  }
