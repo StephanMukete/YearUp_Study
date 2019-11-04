@@ -16,6 +16,8 @@
 
     margin: 0;
 
+    overflow-x: hidden;
+
   }
 
 
@@ -36,6 +38,70 @@
 
 
 
+  #street, #street-container {
+
+    position: fixed;
+
+    background-color: #333;
+
+    height: 22vh;
+
+    padding-top: 6%;
+
+    width: 100%;
+
+    bottom: 0;
+
+    z-index: 1;
+
+    display: grid;
+
+    grid-template: 2.45vh / repeat(3, 30%);
+
+    grid-gap: 5%;
+
+  }
+
+
+
+  #street div {
+
+   z-index: 2;
+
+   background-color: yellow;
+
+  }
+
+
+
+  #line-1 {
+
+
+
+  }
+
+
+
+  #line-2 {
+
+   left: 40%;
+
+  }
+
+
+
+  #line-3 {
+
+    left: 75%;
+
+  }
+
+
+
+
+
+
+
   .move {
 
     animation: moveR 5s;
@@ -49,5 +115,15 @@
     from { left: 0; }
 
     to { left: 100%; }
+
+  }
+
+
+
+  @keyframes moveLine {
+
+    from { left: 5% }
+
+    to { left: 100% }
 
   }
