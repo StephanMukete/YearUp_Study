@@ -1,4 +1,13 @@
 let playerParty = document.getElementById('player-party')
+let generateBtn = document.getElementById('generate-btn')
+generateBtn.addEventListener('click', () => {
+  let list = []
+  while (list.length < 4) {
+    let person = prompt('Give a name to this person')
+    list.push(person)
+  }
+  generateUnits(party,list)
+})
 const generateUnits = (party, list) => {
   for (name of list) {
     let unit = new Unit(name)
