@@ -1,41 +1,66 @@
 class Unit {
-  constructor(name) {
-      this.name = name
-      this.hp = 100
-      this.atk = 10
-      this.job = 'Squire'
-      this.alive = true
-  }
+ constructor(name) {
+ this.name = name
+ this.hp = 100
+ this.atk = 10
+ this.job = "Squire"
+ this.alive = true
+ this.mag = 5
+ equipment = []
+ }
 
-  attack(target) {
-    target.hp -= this.atk
-    if (target) {
-      target.alive = false
-      return `${target.name} has fallen`
-    }
-    return `${this.name} attacks ${target.name}`
-  }
-}
-class Squire  extends Unit{
-  constructor() {
-    super()
-    this.job = 'Squire'
-  }
-}
-class Knite extends Unit {
-  constructor(name) {
-  super(name)
-  this.job = 'Knite'
-  }
-}
+ equipment(item) {
+   this.equipment.push(item)
+   return `${item.name} has been equipped`
+ }
 
-class Mage extends Unit{
-  constructor(name) {
-    this.hp -= 25
-    this.mag = += 25
-    this.job = 'Mage'
-  }
+ attack(target){
+   if(!target.alive) return `${target.name} has already fallen!`
+   if (this.equipment) {
+     this.equipment.atk += this.atk
+   }
+ target.hp -= this.atk
+ if (target.hp <=0) {
+   target.alive = false
+   return `${target.name} has fallen!`
+ }
+ return `${this.name} attacked ${target.name}`
+ }
 }
 
-let knite = new Knite('Stephan')
-let squire = new Squire('Mukete')
+class Squire extends Unit{ //inheritence
+ constructor(name){
+ super(name)
+ }
+}
+
+class Knight extends Unit {
+ constructor(name){
+ super(name) //constructer of parent class / Unit.constructer
+ this.job = "Knight" //modifications to original class, when class is referenced
+ this.atk += 10
+ }
+}
+
+class Mage extends Unit {
+ constructor(name) {
+   super(name)
+   this.hp -= 25
+   this.mag += 25
+   this.job = "Mage"
+ }
+ castSpell(target){
+   if(!target.alive) return `${target.name} has fallen!`
+ target.hp -= this.mag
+ if (target.hp <=0) {
+   target.alive = false
+   return `${target.name} has fallen!`
+ }
+ return `${this.name} casted Fire on ${target.name}`
+ }
+}
+
+
+let knight = new Knight('Nadira')
+let squire = new Squire('Smith')
+let mage = new Mage ('Muhammad')

@@ -38,7 +38,7 @@ class User {
     this.name = name
     this.inbox = []
     this.block = []
-    console.log('new user created');
+    console.log('new user created')
   }
   blockUser(user){
     this.block.push(user)
